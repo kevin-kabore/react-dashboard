@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+var React = require('react');
+var ReactDOM = require('react-dom');
+
 var ActivityList = require('ActivityList')
 
 var DashboardApp = React.createClass({
@@ -23,7 +25,7 @@ var DashboardApp = React.createClass({
       ]
     };
   },
-  render() {
+  render: function() {
     var {activities} = this.state;
 
     return(

@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
-
+var React = require('react');
 var Activity = require('Activity');
 
-class ActivityList extends Component {
-  render() {
+var  ActivityList = React.createClass({
+  render: function() {
     var {activities} = this.props;
     var renderActivities = () => {
        return activities.map((activity) => {
@@ -16,6 +15,7 @@ class ActivityList extends Component {
       <div>{renderActivities()}</div>
     )
   }
-}
+})
+
 
 module.exports = ActivityList
