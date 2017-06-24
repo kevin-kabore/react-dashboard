@@ -1,7 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var ActivityList = require('ActivityList')
+var ActivityList = require('ActivityList');
+var AddActivity = require('AddActivity');
 
 var DashboardApp = React.createClass({
   getInitialState: function() {
@@ -10,20 +11,29 @@ var DashboardApp = React.createClass({
         {
           id: 1,
           title: 'Gym',
-          time: 2
+          date: 10,
+          startTime: 2,
+          endTime: 3
         },
         {
           id: 2,
           title: 'Codewars',
-          time: 1
+          date: 12,
+          startTime: 3,
+          endTime: 4
         },
         {
           id: 3,
           title: 'Fanslu bug fixes',
-          time: 3
+          date: 14,
+          startTime: 4,
+          endTime: 5
         }
       ]
     };
+  },
+  handleAddActivity: function(activity){
+    alert('new activity:' + activity);
   },
   render: function() {
     var {activities} = this.state;
@@ -31,6 +41,8 @@ var DashboardApp = React.createClass({
     return(
       <div>
         <ActivityList activities={activities}/>
+        <AddActivity onAddActivity={this.handleAddActivity}/>
+
       </div>
     )
   }
