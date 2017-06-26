@@ -7,7 +7,7 @@ var Activity = React.createClass({
 
     return (
       <div>
-        {id}. {title} - {date} - {startTime} -  {endTime}
+       {title} - {date} - {startTime} -  {endTime}
       </div>
     )
   }

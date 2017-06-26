@@ -14,6 +14,7 @@ var AddActivity = React.createClass({
     activity.endTime = document.getElementById("endTime").value;
 
 
+
     // var activityTitle = this.refs.activityTitle.value;
     // var activityDate = this.refs.activityDate.value;
     // var startTime = this.refs.startTime.value;
