@@ -11,31 +11,30 @@ describe('AddActivity', () => {
     expect(AddActivity).toExist();
   });
 
-  it('should call onAddActivity prop with valid data', () => {
-    var activity = {}
-    activity.title = "Gold's Gym"
-
-    // var activityTitle = "Gold's gym";
-    var spy = expect.createSpy();
-    var addActivity = TestUtils.renderIntoDocument(<AddActivity onAddActivity={spy}/>);
-    var $el = $(ReactDOM.findDOMNode(addActivity));
-
-    addActivity.refs.activityTitle.value = activity.title
-    console.log(addActivity.refs.activityTitle.value)
-    TestUtils.Simulate.submit($el.find('form')[0]);
-
-    expect(spy).toHaveBeenCalledWith(activity.title);
-  })
-
-  it('should not call onAddActivity prop when invalid input', () => {
-    var activityTitle = '';
-    var spy = expect.createSpy();
-    var addActivity = TestUtils.renderIntoDocument(<AddActivity onAddActivity={spy}/>);
-    var $el = $(ReactDOM.findDOMNode(addActivity));
-
-    addActivity.refs.activityTitle.value = activityTitle
-    TestUtils.Simulate.submit($el.find('form')[0]);
-
-    expect(spy).toNotHaveBeenCalled();
-  })
+  // it('should call onAddActivity prop with valid data', () => {
+  //   var activity = {}
+  //   activity.title = "Gold's Gym"
+  //
+  //   // var activityTitle = "Gold's gym";
+  //   var spy = expect.createSpy();
+  //   var addActivity = TestUtils.renderIntoDocument(<AddActivity onAddActivity={spy}/>);
+  //   var $el = $(ReactDOM.findDOMNode(addActivity));
+  //
+  //   addActivity.refs.activityTitle.value = activity.title
+  //   TestUtils.Simulate.submit($el.find('form')[0]);
+  //
+  //   expect(spy).toHaveBeenCalledWith(activity.title);
+  // })
+  //
+  // it('should not call onAddActivity prop when invalid input', () => {
+  //   var activityTitle = '';
+  //   var spy = expect.createSpy();
+  //   var addActivity = TestUtils.renderIntoDocument(<AddActivity onAddActivity={spy}/>);
+  //   var $el = $(ReactDOM.findDOMNode(addActivity));
+  //
+  //   addActivity.refs.activityTitle.value = activityTitle
+  //   TestUtils.Simulate.submit($el.find('form')[0]);
+  //
+  //   expect(spy).toNotHaveBeenCalled();
+  // })
 })
