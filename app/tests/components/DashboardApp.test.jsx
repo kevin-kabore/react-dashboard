@@ -22,4 +22,20 @@ describe('DashboardApp', () => {
 
     expect(dashboardApp.state.activities[0].title).toBe(activity.title)
   });
+  it('should toggle completed value when handleToggle called', () => {
+    var activityData = {
+      id: 2,
+      title: 'Gym',
+      completed: false
+    };
+    var dashboardApp = TestUtils.renderIntoDocument(<DashboardApp/>);
+    dashboardApp.setState({activities: [activityData]})
+
+    // check activity completed to equal valse
+    expect(dashboardApp.state.activities[0].completed).toBe(false);
+    // call handleToggle(id=2)
+    dashboardApp.handleToggle(2);
+    expect(dashboardApp.state.activities[0].completed).toBe(true);
+
+  })
 })

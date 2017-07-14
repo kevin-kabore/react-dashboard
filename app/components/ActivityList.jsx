@@ -7,7 +7,7 @@ var  ActivityList = React.createClass({
     var renderActivities = () => {
        return activities.map((activity) => {
          return (
-           <Activity key={activity.id} {...activity}/>
+           <Activity key={activity.id} {...activity} onToggle={this.props.onToggle}/>
          )
        })
     };
