@@ -22,7 +22,7 @@ describe('Activity', () => {
 
     $el = $el[0].getElementsByTagName('input')
     console.log($el[0])
-    console.log($el[3])
+
     TestUtils.Simulate.click($el[0]);
 
     expect(spy).toHaveBeenCalledWith(3);
